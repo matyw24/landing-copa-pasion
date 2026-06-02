@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pasión Copa – Mundial Digital</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(160deg, #0d0d2b 0%, #1a0533 60%, #0d1a3a 100%);
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 420px;
+      padding: 36px 24px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(255,255,255,0.15);
+      box-shadow: 0 0 40px rgba(130, 0, 255, 0.4);
+    }
+
+    .brand-name {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: 0.02em;
+      text-align: center;
+    }
+
+    .brand-sub {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-top: -12px;
+    }
+
+    .links {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 6px;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      width: 100%;
+      padding: 16px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: transform 0.15s, box-shadow 0.15s, filter 0.15s;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.08);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.45);
+    }
+
+    .btn:active { transform: translateY(0); }
+
+    .btn-papa {
+      background: linear-gradient(90deg, #6b21a8, #9333ea);
+      color: #fff;
+      box-shadow: 0 4px 18px rgba(147, 51, 234, 0.45);
+    }
+
+    .btn-parejas {
+      background: linear-gradient(90deg, #9333ea, #c026d3);
+      color: #fff;
+      box-shadow: 0 4px 18px rgba(192, 38, 211, 0.4);
+    }
+
+    .btn-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 2px solid rgba(255,255,255,0.3);
+    }
+
+    .btn-emoji {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    .btn-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .btn-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      opacity: 0.8;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .btn-title {
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    footer {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.3);
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+
+    <!-- Logo -->
+    <img
+      class="logo"
+      src="https://i.imgur.com/placeholder.png"
+      onerror="this.style.display='none'"
+      alt="Pasión Copa logo"
+      id="logo"
+    />
+
+    <!-- Fallback SVG logo if image fails -->
+    <svg id="svg-logo" width="150" height="150" viewBox="0 0 150 150" style="display:none;border-radius:50%;box-shadow:0 0 40px rgba(130,0,255,0.4)">
+      <defs>
+        <radialGradient id="bg" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#1a0533"/>
+          <stop offset="100%" stop-color="#0d0d2b"/>
+        </radialGradient>
+      </defs>
+      <circle cx="75" cy="75" r="75" fill="url(#bg)"/>
+      <text x="75" y="85" text-anchor="middle" font-size="55" fill="white">⚽</text>
+    </svg>
+
+    <div class="brand-name">PASION_COPA</div>
+    <div class="brand-sub">Mundial Digital</div>
+
+    <div class="links">
+
+      <!-- Álbum Papá -->
+      <a class="btn btn-papa"
+         href="https://digital-s-9476.myshopify.com/products/album-mundial-papa-pack"
+         target="_blank" rel="noopener">
+        <div class="btn-emoji">⚽</div>
+        <div class="btn-text">
+          <span class="btn-label">Producto estrella</span>
+          <span class="btn-title">Álbum Mundial Papá – Pack</span>
+        </div>
+      </a>
+
+      <!-- Álbum Parejas -->
+      <a class="btn btn-parejas"
+         href="https://digital-s-9476.myshopify.com/products/%F0%9F%92%96-album-para-parejas-editable-en-canva-%F0%9F%93%B8"
+         target="_blank" rel="noopener">
+        <div class="btn-emoji">💖</div>
+        <div class="btn-text">
+          <span class="btn-label">Para ellas</span>
+          <span class="btn-title">Álbum para Parejas 📸</span>
+        </div>
+      </a>
+
+    </div>
+
+    <footer>© 2026 Pasión Copa · Mundial Digital</footer>
+  </div>
+
+  <script>
+    // Show SVG fallback if logo image fails
+    const logo = document.getElementById('logo');
+    const svgLogo = document.getElementById('svg-logo');
+    logo.onerror = function() {
+      logo.style.display = 'none';
+      svgLogo.style.display = 'block';
+    };
+  </script>
+</body>
+</html>
