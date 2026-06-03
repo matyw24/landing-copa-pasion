@@ -23,7 +23,6 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0;
     }
 
     /* ── HERO ── */
@@ -32,150 +31,148 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 40px 24px 28px;
-      gap: 14px;
+      padding: 44px 24px 20px;
+      gap: 10px;
     }
 
-    .logo {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid rgba(255,210,50,0.5);
-      box-shadow: 0 0 36px rgba(255,150,0,0.35), 0 0 70px rgba(100,0,200,0.3);
-    }
-
-    .brand-name {
-      font-size: 1.75rem;
+    .tagline {
+      font-size: 1.5rem;
       font-weight: 900;
-      letter-spacing: 0.05em;
+      text-align: center;
+      line-height: 1.25;
       background: linear-gradient(90deg, #f97316, #a855f7, #38bdf8);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
 
-    .brand-sub {
-      font-size: 0.78rem;
+    .sub {
+      font-size: 0.82rem;
       color: rgba(255,255,255,0.45);
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      margin-top: -10px;
+      text-align: center;
     }
 
-    /* ── BADGES ── */
     .badges {
       display: flex;
-      gap: 8px;
+      gap: 7px;
       flex-wrap: wrap;
       justify-content: center;
-      margin-top: 4px;
+      margin-top: 6px;
     }
 
     .badge {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
       border-radius: 20px;
-      padding: 5px 12px;
-      font-size: 0.72rem;
+      padding: 5px 11px;
+      font-size: 0.7rem;
       font-weight: 600;
-      color: rgba(255,255,255,0.75);
-      display: flex;
-      align-items: center;
-      gap: 5px;
+      color: rgba(255,255,255,0.7);
     }
 
-    /* ── BUTTONS ── */
-    .links {
+    /* ── PRODUCT CARDS ── */
+    .products {
       width: 100%;
-      padding: 0 20px;
+      padding: 20px 18px 0;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 16px;
     }
 
-    .btn {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      width: 100%;
-      padding: 15px 20px;
-      border-radius: 50px;
+    .card {
+      border-radius: 20px;
+      overflow: hidden;
       text-decoration: none;
-      transition: transform 0.15s, box-shadow 0.15s, filter 0.15s;
+      display: block;
+      position: relative;
+      transition: transform 0.18s, box-shadow 0.18s;
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
-      filter: brightness(1.1);
-      box-shadow: 0 10px 32px rgba(0,0,0,0.55);
+    .card:hover { transform: translateY(-3px); }
+    .card:active { transform: translateY(0); }
+
+    .card-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
     }
 
-    .btn:active { transform: translateY(0); }
-
-    .btn-papa {
-      background: linear-gradient(90deg, #5b21b6, #9333ea);
-      box-shadow: 0 4px 18px rgba(147,51,234,0.4);
-    }
-
-    .btn-parejas {
-      background: linear-gradient(90deg, #9333ea, #db2777);
-      box-shadow: 0 4px 18px rgba(219,39,119,0.35);
-    }
-
-    .btn-emoji {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.18);
+    .card-overlay {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 28px 18px 18px;
+      background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, transparent 100%);
       display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .card-info { display: flex; flex-direction: column; gap: 3px; }
+
+    .card-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      opacity: 0.65;
+    }
+
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 900;
+      line-height: 1.2;
+    }
+
+    .card-btn {
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.3rem;
-      flex-shrink: 0;
-    }
-
-    .btn-text { display: flex; flex-direction: column; line-height: 1.25; }
-
-    .btn-label {
-      font-size: 0.68rem;
-      font-weight: 600;
-      opacity: 0.7;
-      text-transform: uppercase;
-      letter-spacing: 0.09em;
-      color: #fff;
-    }
-
-    .btn-title {
-      font-size: 0.95rem;
+      gap: 6px;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-size: 0.82rem;
       font-weight: 800;
       color: #fff;
+      align-self: flex-start;
     }
 
-    /* ── DIVIDER ── */
+    .card-papa .card-btn {
+      background: linear-gradient(90deg, #5b21b6, #9333ea);
+      box-shadow: 0 3px 14px rgba(147,51,234,0.5);
+    }
+
+    .card-papa:hover { box-shadow: 0 10px 36px rgba(147,51,234,0.45); }
+
+    .card-parejas .card-btn {
+      background: linear-gradient(90deg, #9333ea, #db2777);
+      box-shadow: 0 3px 14px rgba(219,39,119,0.5);
+    }
+
+    .card-parejas:hover { box-shadow: 0 10px 36px rgba(219,39,119,0.4); }
+
+    /* ── TESTIMONIALS ── */
     .divider {
-      width: calc(100% - 40px);
+      width: calc(100% - 36px);
       height: 1px;
-      background: rgba(255,255,255,0.08);
-      margin: 24px 20px 0;
+      background: rgba(255,255,255,0.07);
+      margin: 28px 18px 0;
     }
 
-    /* ── SECTION TITLE ── */
     .section-title {
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.15em;
-      color: rgba(255,255,255,0.35);
-      margin: 20px 0 12px;
+      color: rgba(255,255,255,0.3);
+      margin: 18px 0 12px;
       width: 100%;
-      padding: 0 20px;
+      padding: 0 18px;
     }
 
-    /* ── TESTIMONIALS ── */
     .testimonials {
       width: 100%;
-      padding: 0 20px;
+      padding: 0 18px;
       display: flex;
       flex-direction: column;
       gap: 10px;
@@ -183,31 +180,31 @@
 
     .testi {
       background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.08);
       border-radius: 16px;
       padding: 14px 16px;
     }
 
-    .testi-stars { font-size: 0.75rem; margin-bottom: 5px; }
+    .testi-stars { font-size: 0.72rem; margin-bottom: 5px; }
 
     .testi-text {
-      font-size: 0.82rem;
-      color: rgba(255,255,255,0.75);
+      font-size: 0.81rem;
+      color: rgba(255,255,255,0.72);
       line-height: 1.5;
       font-style: italic;
     }
 
     .testi-author {
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       font-weight: 700;
-      color: rgba(255,255,255,0.4);
+      color: rgba(255,255,255,0.35);
       margin-top: 7px;
     }
 
     /* ── FAQ ── */
     .faq {
       width: 100%;
-      padding: 0 20px;
+      padding: 0 18px;
       display: flex;
       flex-direction: column;
       gap: 8px;
@@ -215,7 +212,7 @@
 
     .faq-item {
       background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.08);
       border-radius: 14px;
       overflow: hidden;
     }
@@ -225,7 +222,7 @@
       background: none;
       border: none;
       color: #fff;
-      font-size: 0.85rem;
+      font-size: 0.84rem;
       font-weight: 700;
       padding: 14px 16px;
       text-align: left;
@@ -233,12 +230,13 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 8px;
     }
 
     .faq-q::after {
       content: '+';
-      font-size: 1.2rem;
-      opacity: 0.5;
+      font-size: 1.1rem;
+      opacity: 0.45;
       transition: transform 0.2s;
       flex-shrink: 0;
     }
@@ -246,8 +244,8 @@
     .faq-item.open .faq-q::after { transform: rotate(45deg); }
 
     .faq-a {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.6);
+      font-size: 0.79rem;
+      color: rgba(255,255,255,0.58);
       padding: 0 16px;
       max-height: 0;
       overflow: hidden;
@@ -260,11 +258,10 @@
       padding: 0 16px 14px;
     }
 
-    /* ── FOOTER ── */
     footer {
-      font-size: 0.68rem;
-      color: rgba(255,255,255,0.22);
-      margin-top: 28px;
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.18);
+      margin-top: 30px;
       text-align: center;
     }
   </style>
@@ -274,87 +271,88 @@
 
     <!-- HERO -->
     <div class="hero">
-      <img class="logo" src="https://i.postimg.cc/NKYDyCM6/logo.png" onerror="this.style.background='linear-gradient(135deg,#1a0533,#0d1a3a)'" alt="Pasión Copa" />
-
-      <div class="brand-name">PASION_COPA</div>
-      <div class="brand-sub">Mundial Digital</div>
-
+      <div class="tagline">Regalos digitales para<br>vivir el Mundial 2026 🏆</div>
+      <div class="sub">Editables en Canva · Descarga instantánea</div>
       <div class="badges">
-        <span class="badge">⚡ Descarga instantánea</span>
+        <span class="badge">⚡ Entrega inmediata</span>
         <span class="badge">✏️ Editable en Canva</span>
-        <span class="badge">🌍 Copa Mundial 2026</span>
+        <span class="badge">🖨️ Listo para imprimir</span>
       </div>
     </div>
 
-    <!-- BUTTONS -->
-    <div class="links">
-      <a class="btn btn-papa"
+    <!-- PRODUCT CARDS -->
+    <div class="products">
+
+      <a class="card card-papa"
          href="https://digital-s-9476.myshopify.com/products/album-mundial-papa-pack"
          target="_blank" rel="noopener">
-        <div class="btn-emoji">⚽</div>
-        <div class="btn-text">
-          <span class="btn-label">Producto estrella</span>
-          <span class="btn-title">Álbum Mundial Papá – Pack</span>
+        <img class="card-img"
+             src="https://cdn.shopify.com/s/files/1/0986/7136/2411/files/image.png_202605280043_bbbda5f2-1511-4c33-a841-8bde36b36de9_430x.jpg?v=1779941655"
+             alt="Álbum Mundial Papá" />
+        <div class="card-overlay">
+          <div class="card-info">
+            <span class="card-label">Producto estrella</span>
+            <span class="card-title">Álbum Mundial Papá – Pack</span>
+          </div>
+          <span class="card-btn">Ver producto →</span>
         </div>
       </a>
 
-      <a class="btn btn-parejas"
+      <a class="card card-parejas"
          href="https://digital-s-9476.myshopify.com/products/%F0%9F%92%96-album-para-parejas-editable-en-canva-%F0%9F%93%B8"
          target="_blank" rel="noopener">
-        <div class="btn-emoji">💖</div>
-        <div class="btn-text">
-          <span class="btn-label">Ideal para regalar</span>
-          <span class="btn-title">Álbum para Parejas 📸</span>
+        <img class="card-img"
+             src="https://cdn.shopify.com/s/files/1/0986/7136/2411/files/image.png_202606011224_430x.jpg?v=1780329261"
+             alt="Álbum para Parejas" />
+        <div class="card-overlay">
+          <div class="card-info">
+            <span class="card-label">Ideal para regalar</span>
+            <span class="card-title">Álbum para Parejas 💖</span>
+          </div>
+          <span class="card-btn">Ver producto →</span>
         </div>
       </a>
+
     </div>
 
     <!-- TESTIMONIOS -->
     <div class="divider"></div>
     <div class="section-title">⭐ Lo que dicen nuestros clientes</div>
     <div class="testimonials">
-
       <div class="testi">
         <div class="testi-stars">⭐⭐⭐⭐⭐</div>
         <div class="testi-text">"Lo compré para el Día del Padre y quedó hermoso. Se descargó al toque y fue súper fácil de editar."</div>
         <div class="testi-author">— Valentina R., Buenos Aires</div>
       </div>
-
       <div class="testi">
         <div class="testi-stars">⭐⭐⭐⭐⭐</div>
         <div class="testi-text">"El álbum de parejas es una idea divina. Mi novio lloró. 100% lo recomiendo para el Mundial."</div>
         <div class="testi-author">— Camila M., Córdoba</div>
       </div>
-
     </div>
 
     <!-- FAQ -->
     <div class="divider"></div>
     <div class="section-title">❓ Preguntas frecuentes</div>
     <div class="faq">
-
       <div class="faq-item">
         <button class="faq-q">¿Cómo recibo el producto?</button>
         <div class="faq-a">Al completar tu compra recibís el link de descarga al instante en tu email. Sin esperas.</div>
       </div>
-
       <div class="faq-item">
         <button class="faq-q">¿Necesito saber diseño para editarlo?</button>
         <div class="faq-a">No. Se edita directo en Canva, que es gratuito. Solo cambiás fotos y texto con un clic.</div>
       </div>
-
       <div class="faq-item">
         <button class="faq-q">¿Lo puedo imprimir?</button>
         <div class="faq-a">Sí, viene en alta calidad listo para imprimir en cualquier imprenta o en casa.</div>
       </div>
-
     </div>
 
     <footer>© 2026 Pasión Copa · Mundial Digital</footer>
   </div>
 
   <script>
-    // FAQ toggle
     document.querySelectorAll('.faq-q').forEach(btn => {
       btn.addEventListener('click', () => {
         const item = btn.parentElement;
