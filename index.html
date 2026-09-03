@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pasión Copa – Mundial Digital</title>
+  <title>Creadivia – Crea en Casa</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       min-height: 100vh;
-      background: linear-gradient(160deg, #0a0a24 0%, #150328 55%, #0a1530 100%);
+      background: linear-gradient(160deg, #0a0a1e 0%, #12062a 55%, #0a1230 100%);
       font-family: 'Segoe UI', Arial, sans-serif;
       color: #fff;
       display: flex;
       justify-content: center;
-      padding: 0 0 48px;
+      padding: 0 0 44px;
     }
 
     .page {
@@ -31,56 +31,69 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 44px 24px 20px;
+      padding: 40px 22px 22px;
       gap: 10px;
     }
 
     .tagline {
-      font-size: 1.5rem;
+      font-size: 1.55rem;
       font-weight: 900;
       text-align: center;
-      line-height: 1.25;
-      background: linear-gradient(90deg, #f97316, #a855f7, #38bdf8);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      line-height: 1.3;
     }
 
     .sub {
-      font-size: 0.82rem;
-      color: rgba(255,255,255,0.45);
+      font-size: 0.84rem;
+      color: rgba(255,255,255,0.5);
       text-align: center;
+      line-height: 1.5;
     }
 
-    .badges {
+    /* ── TRUST BAR ── */
+    .trust {
       display: flex;
-      gap: 7px;
+      gap: 6px;
       flex-wrap: wrap;
       justify-content: center;
-      margin-top: 6px;
+      margin-top: 8px;
     }
 
-    .badge {
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.12);
+    .trust-badge {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
       border-radius: 20px;
       padding: 5px 11px;
       font-size: 0.7rem;
-      font-weight: 600;
-      color: rgba(255,255,255,0.7);
+      font-weight: 700;
+      color: rgba(255,255,255,0.72);
     }
 
-    /* ── PRODUCT CARDS ── */
+    /* ── URGENCY ── */
+    .urgency {
+      width: calc(100% - 36px);
+      margin: 18px 18px 0;
+      background: linear-gradient(90deg, rgba(234,179,8,0.12), rgba(234,179,8,0.04));
+      border: 1px solid rgba(234,179,8,0.25);
+      border-radius: 12px;
+      padding: 10px 14px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #fbbf24;
+      text-align: center;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── PRODUCTS ── */
     .products {
       width: 100%;
-      padding: 20px 18px 0;
+      padding: 18px 18px 0;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 14px;
     }
 
     .card {
-      border-radius: 20px;
+      border-radius: 18px;
       overflow: hidden;
       text-decoration: none;
       display: block;
@@ -88,7 +101,7 @@
       transition: transform 0.18s, box-shadow 0.18s;
     }
 
-    .card:hover { transform: translateY(-3px); }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(0,0,0,0.5); }
     .card:active { transform: translateY(0); }
 
     .card-img {
@@ -101,78 +114,61 @@
     .card-overlay {
       position: absolute;
       bottom: 0; left: 0; right: 0;
-      padding: 28px 18px 18px;
-      background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, transparent 100%);
+      padding: 30px 16px 16px;
+      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
       display: flex;
       flex-direction: column;
       gap: 10px;
     }
 
-    .card-info { display: flex; flex-direction: column; gap: 3px; }
+    .card-info { display: flex; flex-direction: column; gap: 2px; }
 
     .card-label {
-      font-size: 0.68rem;
+      font-size: 0.65rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      opacity: 0.65;
+      letter-spacing: 0.14em;
+      opacity: 0.6;
+      color: #fff;
     }
 
     .card-title {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       font-weight: 900;
       line-height: 1.2;
+      color: #fff;
     }
 
     .card-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 6px;
-      padding: 10px 20px;
+      gap: 5px;
+      padding: 10px 18px;
       border-radius: 50px;
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       font-weight: 800;
       color: #fff;
       align-self: flex-start;
+      background: linear-gradient(90deg, #7c3aed, #a855f7);
+      box-shadow: 0 3px 14px rgba(124,58,237,0.45);
     }
 
-    .card-papa .card-btn {
-      background: linear-gradient(90deg, #5b21b6, #9333ea);
-      box-shadow: 0 3px 14px rgba(147,51,234,0.5);
-    }
-
-    .card-papa:hover { box-shadow: 0 10px 36px rgba(147,51,234,0.45); }
-
-    .card-parejas .card-btn {
-      background: linear-gradient(90deg, #9333ea, #db2777);
-      box-shadow: 0 3px 14px rgba(219,39,119,0.5);
-    }
-
-    .card-parejas:hover { box-shadow: 0 10px 36px rgba(219,39,119,0.4); }
-
-    .card-cuadro .card-btn {
-      background: linear-gradient(90deg, #2563eb, #f97316);
-      box-shadow: 0 3px 14px rgba(37,99,235,0.5);
-    }
-
-    .card-cuadro:hover { box-shadow: 0 10px 36px rgba(37,99,235,0.4); }
-
-    /* ── TESTIMONIALS ── */
+    /* ── SOCIAL PROOF ── */
     .divider {
       width: calc(100% - 36px);
       height: 1px;
-      background: rgba(255,255,255,0.07);
-      margin: 28px 18px 0;
+      background: rgba(255,255,255,0.06);
+      margin: 24px 18px 0;
     }
 
     .section-title {
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.15em;
-      color: rgba(255,255,255,0.3);
-      margin: 18px 0 12px;
+      color: rgba(255,255,255,0.28);
+      margin: 16px 0 10px;
       width: 100%;
       padding: 0 18px;
     }
@@ -186,26 +182,26 @@
     }
 
     .testi {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 16px;
-      padding: 14px 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 14px;
+      padding: 13px 15px;
     }
 
-    .testi-stars { font-size: 0.72rem; margin-bottom: 5px; }
+    .testi-stars { font-size: 0.7rem; margin-bottom: 4px; }
 
     .testi-text {
-      font-size: 0.81rem;
-      color: rgba(255,255,255,0.72);
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.68);
       line-height: 1.5;
       font-style: italic;
     }
 
     .testi-author {
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       font-weight: 700;
-      color: rgba(255,255,255,0.35);
-      margin-top: 7px;
+      color: rgba(255,255,255,0.3);
+      margin-top: 6px;
     }
 
     /* ── FAQ ── */
@@ -214,13 +210,13 @@
       padding: 0 18px;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 7px;
     }
 
     .faq-item {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 14px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
       overflow: hidden;
     }
 
@@ -229,9 +225,9 @@
       background: none;
       border: none;
       color: #fff;
-      font-size: 0.84rem;
+      font-size: 0.82rem;
       font-weight: 700;
-      padding: 14px 16px;
+      padding: 13px 15px;
       text-align: left;
       cursor: pointer;
       display: flex;
@@ -243,7 +239,7 @@
     .faq-q::after {
       content: '+';
       font-size: 1.1rem;
-      opacity: 0.45;
+      opacity: 0.4;
       transition: transform 0.2s;
       flex-shrink: 0;
     }
@@ -251,9 +247,9 @@
     .faq-item.open .faq-q::after { transform: rotate(45deg); }
 
     .faq-a {
-      font-size: 0.79rem;
-      color: rgba(255,255,255,0.58);
-      padding: 0 16px;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.55);
+      padding: 0 15px;
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.25s ease, padding 0.2s;
@@ -262,13 +258,13 @@
 
     .faq-item.open .faq-a {
       max-height: 120px;
-      padding: 0 16px 14px;
+      padding: 0 15px 13px;
     }
 
     footer {
-      font-size: 0.65rem;
-      color: rgba(255,255,255,0.18);
-      margin-top: 30px;
+      font-size: 0.62rem;
+      color: rgba(255,255,255,0.15);
+      margin-top: 28px;
       text-align: center;
     }
   </style>
@@ -276,21 +272,36 @@
 <body>
   <div class="page">
 
-    <!-- HERO -->
     <div class="hero">
-      <div class="tagline">Sorprendé a quien más<br>querés este Mundial 🏆</div>
-      <div class="sub">Un regalo único, hecho con amor y personalizado por vos</div>
-      <div class="badges">
-        <span class="badge">💛 Personalizable</span>
-        <span class="badge">✨ Único e irrepetible</span>
-        <span class="badge">📲 Lo recibís al instante</span>
+      <div class="tagline">Hacé que cada momento<br>sea inolvidable ✨</div>
+      <div class="sub">Plantillas personalizables en Canva.<br>Descargá, editá y sorprendé en minutos.</div>
+      <div class="trust">
+        <span class="trust-badge">✅ +4.000 personas confían</span>
+        <span class="trust-badge">⚡ Descarga inmediata</span>
+        <span class="trust-badge">🎨 Editá sin saber diseño</span>
       </div>
     </div>
 
-    <!-- PRODUCT CARDS -->
+    <div class="urgency">🔥 Últimas unidades con precio de lanzamiento</div>
+
     <div class="products">
 
-      <a class="card card-papa"
+      <a class="card"
+         href="https://digital-s-9476.myshopify.com/products/kit-fiesta?"
+         target="_blank" rel="noopener">
+        <img class="card-img"
+             src="https://cdn.shopify.com/s/files/1/0986/7136/2411/files/image.png_202605280043_bbbda5f2-1511-4c33-a841-8bde36b36de9_430x.jpg?v=1779941655"
+             alt="Kit Fiesta" />
+        <div class="card-overlay">
+          <div class="card-info">
+            <span class="card-label">Nuevo</span>
+            <span class="card-title">Kit Fiesta Infantil 🎉</span>
+          </div>
+          <span class="card-btn">Lo quiero →</span>
+        </div>
+      </a>
+
+      <a class="card"
          href="https://digital-s-9476.myshopify.com/products/album-mundial-papa-pack"
          target="_blank" rel="noopener">
         <img class="card-img"
@@ -299,14 +310,14 @@
         <div class="card-overlay">
           <div class="card-info">
             <span class="card-label">Para el mejor papá</span>
-            <span class="card-title">Álbum Mundial para Papá ⚽</span>
+            <span class="card-title">Álbum Mundial Papá ⚽</span>
           </div>
-          <span class="card-btn">Quiero regalarlo →</span>
+          <span class="card-btn">Lo quiero →</span>
         </div>
       </a>
 
-      <a class="card card-parejas"
-         href="https://mvpxdu-1e.myshopify.com/products/album-parejas"
+      <a class="card"
+         href="https://digital-s-9476.myshopify.com/products/%F0%9F%92%96-album-para-parejas-editable-en-canva-%F0%9F%93%B8?"
          target="_blank" rel="noopener">
         <img class="card-img"
              src="https://cdn.shopify.com/s/files/1/0986/7136/2411/files/image.png_202606011224_430x.jpg?v=1780329261"
@@ -316,12 +327,12 @@
             <span class="card-label">Para tu persona favorita</span>
             <span class="card-title">Álbum de Parejas 💖</span>
           </div>
-          <span class="card-btn">Quiero regalarlo →</span>
+          <span class="card-btn">Lo quiero →</span>
         </div>
       </a>
 
-      <a class="card card-cuadro"
-         href="https://mvpxdu-1e.myshopify.com/products/cuadro-messi-pantilla"
+      <a class="card"
+         href="https://digital-s-9476.myshopify.com/products/cuadro-de-messi?"
          target="_blank" rel="noopener">
         <img class="card-img"
              src="https://cdn.shopify.com/s/files/1/0671/0126/1899/files/Gemini_Generated_Image_r3qxctr3qxctr3qx_430x.png?v=1780957803"
@@ -331,47 +342,45 @@
             <span class="card-label">Para el fanático del fútbol</span>
             <span class="card-title">Cuadro Messi, CR7 y Neymar 🐐</span>
           </div>
-          <span class="card-btn">Quiero regalarlo →</span>
+          <span class="card-btn">Lo quiero →</span>
         </div>
       </a>
 
     </div>
 
-    <!-- TESTIMONIOS -->
     <div class="divider"></div>
-    <div class="section-title">⭐ Lo que dicen nuestros clientes</div>
+    <div class="section-title">⭐ Clientes felices</div>
     <div class="testimonials">
       <div class="testi">
         <div class="testi-stars">⭐⭐⭐⭐⭐</div>
-        <div class="testi-text">"Lo compré para el Día del Padre y quedó hermoso. Se descargó al toque y fue súper fácil de editar."</div>
-        <div class="testi-author">— Valentina R., Buenos Aires</div>
+        <div class="testi-text">"Llegó al instante y fue re fácil de editar. Quedó hermoso, mi familia no podía creer que lo hice yo."</div>
+        <div class="testi-author">— Valentina R.</div>
       </div>
       <div class="testi">
         <div class="testi-stars">⭐⭐⭐⭐⭐</div>
-        <div class="testi-text">"El álbum de parejas es una idea divina. Mi novio lloró. 100% lo recomiendo para el Mundial."</div>
-        <div class="testi-author">— Camila M., Córdoba</div>
+        <div class="testi-text">"Armé todo el kit de la fiesta de mi hijo en 10 minutos. La mejor compra que hice."</div>
+        <div class="testi-author">— Camila M.</div>
       </div>
     </div>
 
-    <!-- FAQ -->
     <div class="divider"></div>
     <div class="section-title">❓ Preguntas frecuentes</div>
     <div class="faq">
       <div class="faq-item">
-        <button class="faq-q">¿Cómo recibo el producto?</button>
-        <div class="faq-a">Al completar tu compra recibís el link de descarga al instante en tu email. Sin esperas.</div>
+        <button class="faq-q">¿Cómo recibo mi compra?</button>
+        <div class="faq-a">Al pagar, te llega el link de descarga al instante a tu email. Sin esperas.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">¿Necesito saber diseño para editarlo?</button>
-        <div class="faq-a">No. Se edita directo en Canva, que es gratuito. Solo cambiás fotos y texto con un clic.</div>
+        <button class="faq-q">¿Necesito Canva PRO?</button>
+        <div class="faq-a">No. Todo funciona con la versión gratuita de Canva. Solo abrís, editás y listo.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">¿Lo puedo imprimir?</button>
-        <div class="faq-a">Sí, viene en alta calidad listo para imprimir en cualquier imprenta o en casa.</div>
+        <div class="faq-a">Sí, viene en alta calidad listo para imprimir en casa o en una imprenta.</div>
       </div>
     </div>
 
-    <footer>© 2026 Pasión Copa · Mundial Digital</footer>
+    <footer>© 2026 Creadivia · Crea en Casa</footer>
   </div>
 
   <script>
