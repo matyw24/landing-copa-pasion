@@ -4,17 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Creadivia – Crea en Casa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       min-height: 100vh;
-      background: linear-gradient(160deg, #0a0a1e 0%, #12062a 55%, #0a1230 100%);
-      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #08081a;
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
       color: #fff;
       display: flex;
       justify-content: center;
-      padding: 0 0 44px;
+      padding: 0;
     }
 
     .page {
@@ -28,85 +31,138 @@
     /* ── HERO ── */
     .hero {
       width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 40px 22px 22px;
-      gap: 10px;
+      padding: 48px 22px 24px;
+      text-align: center;
+      background: radial-gradient(ellipse at 50% 0%, rgba(124,58,237,0.18) 0%, transparent 70%);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: linear-gradient(90deg, #7c3aed, #a855f7);
+      color: #fff;
+      font-size: 0.62rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
     }
 
     .tagline {
-      font-size: 1.55rem;
+      font-size: 1.65rem;
       font-weight: 900;
-      text-align: center;
-      line-height: 1.3;
+      line-height: 1.22;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+
+    .tagline span {
+      background: linear-gradient(90deg, #c084fc, #f472b6, #fbbf24);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .sub {
-      font-size: 0.84rem;
+      font-size: 0.88rem;
       color: rgba(255,255,255,0.5);
-      text-align: center;
-      line-height: 1.5;
+      line-height: 1.55;
+      max-width: 340px;
+      margin: 0 auto;
     }
 
-    /* ── TRUST BAR ── */
+    /* ── TRUST ── */
     .trust {
       display: flex;
       gap: 6px;
       flex-wrap: wrap;
       justify-content: center;
-      margin-top: 8px;
+      padding: 0 22px;
+      margin-top: 16px;
     }
 
     .trust-badge {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
       border-radius: 20px;
-      padding: 5px 11px;
-      font-size: 0.7rem;
+      padding: 6px 12px;
+      font-size: 0.68rem;
       font-weight: 700;
-      color: rgba(255,255,255,0.72);
+      color: rgba(255,255,255,0.68);
     }
 
-    /* ── URGENCY ── */
-    .urgency {
+    /* ── COUNTER / URGENCY ── */
+    .urgency-wrap {
       width: calc(100% - 36px);
-      margin: 18px 18px 0;
-      background: linear-gradient(90deg, rgba(234,179,8,0.12), rgba(234,179,8,0.04));
-      border: 1px solid rgba(234,179,8,0.25);
+      margin: 20px 18px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .urgency {
+      background: linear-gradient(90deg, rgba(239,68,68,0.1), rgba(239,68,68,0.04));
+      border: 1px solid rgba(239,68,68,0.2);
       border-radius: 12px;
       padding: 10px 14px;
       font-size: 0.78rem;
-      font-weight: 700;
-      color: #fbbf24;
+      font-weight: 800;
+      color: #f87171;
       text-align: center;
-      letter-spacing: 0.02em;
+      animation: pulse-urgency 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-urgency {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.75; }
+    }
+
+    .social-proof {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      padding: 9px 14px;
+      font-size: 0.73rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.55);
+      text-align: center;
+    }
+
+    .social-proof strong {
+      color: #a78bfa;
+      font-weight: 800;
     }
 
     /* ── PRODUCTS ── */
     .products {
       width: 100%;
-      padding: 18px 18px 0;
+      padding: 20px 18px 0;
       display: flex;
       flex-direction: column;
       gap: 14px;
     }
 
     .card {
-      border-radius: 18px;
+      border-radius: 16px;
       overflow: hidden;
       text-decoration: none;
       display: block;
       position: relative;
-      transition: transform 0.18s, box-shadow 0.18s;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.3);
     }
 
-    .card:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(0,0,0,0.5); }
-    .card:active { transform: translateY(0); }
+    .card:hover {
+      transform: translateY(-4px) scale(1.01);
+      box-shadow: 0 14px 40px rgba(124,58,237,0.3);
+    }
+
+    .card:active { transform: translateY(0) scale(1); }
 
     .card-img {
       width: 100%;
-      aspect-ratio: 4/3;
+      aspect-ratio: 16/10;
       object-fit: cover;
       display: block;
     }
@@ -114,65 +170,116 @@
     .card-overlay {
       position: absolute;
       bottom: 0; left: 0; right: 0;
-      padding: 30px 16px 16px;
-      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
+      padding: 32px 16px 14px;
+      background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
       display: flex;
-      flex-direction: column;
+      align-items: flex-end;
+      justify-content: space-between;
       gap: 10px;
     }
 
     .card-info { display: flex; flex-direction: column; gap: 2px; }
 
     .card-label {
-      font-size: 0.65rem;
-      font-weight: 700;
+      font-size: 0.6rem;
+      font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
-      opacity: 0.6;
-      color: #fff;
+      letter-spacing: 0.16em;
+      color: #c084fc;
     }
 
     .card-title {
-      font-size: 1.05rem;
+      font-size: 1rem;
       font-weight: 900;
       line-height: 1.2;
       color: #fff;
     }
 
     .card-btn {
+      flex-shrink: 0;
+      padding: 9px 16px;
+      border-radius: 50px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: #fff;
+      background: linear-gradient(135deg, #7c3aed, #a855f7);
+      box-shadow: 0 3px 12px rgba(124,58,237,0.5);
+      white-space: nowrap;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .steps {
+      width: 100%;
+      padding: 0 18px;
+      display: flex;
+      gap: 8px;
+      margin-top: 24px;
+    }
+
+    .step {
+      flex: 1;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+      padding: 16px 10px;
+      text-align: center;
+    }
+
+    .step-num {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 5px;
-      padding: 10px 18px;
-      border-radius: 50px;
-      font-size: 0.8rem;
-      font-weight: 800;
-      color: #fff;
-      align-self: flex-start;
-      background: linear-gradient(90deg, #7c3aed, #a855f7);
-      box-shadow: 0 3px 14px rgba(124,58,237,0.45);
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #7c3aed, #a855f7);
+      font-size: 0.72rem;
+      font-weight: 900;
+      margin-bottom: 8px;
     }
 
-    /* ── SOCIAL PROOF ── */
+    .step-icon { font-size: 1.3rem; margin-bottom: 6px; }
+    .step-text {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.35;
+    }
+
+    /* ── GUARANTEE ── */
+    .guarantee {
+      width: calc(100% - 36px);
+      margin: 20px 18px 0;
+      background: rgba(34,197,94,0.06);
+      border: 1px solid rgba(34,197,94,0.15);
+      border-radius: 12px;
+      padding: 12px 14px;
+      text-align: center;
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: #4ade80;
+    }
+
+    /* ── DIVIDER ── */
     .divider {
       width: calc(100% - 36px);
       height: 1px;
-      background: rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.05);
       margin: 24px 18px 0;
     }
 
     .section-title {
-      font-size: 0.68rem;
-      font-weight: 700;
+      font-size: 0.65rem;
+      font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: rgba(255,255,255,0.28);
-      margin: 16px 0 10px;
+      letter-spacing: 0.16em;
+      color: rgba(255,255,255,0.25);
+      margin: 18px 0 10px;
       width: 100%;
       padding: 0 18px;
     }
 
+    /* ── TESTIMONIALS ── */
     .testimonials {
       width: 100%;
       padding: 0 18px;
@@ -182,25 +289,53 @@
     }
 
     .testi {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.07);
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
       border-radius: 14px;
-      padding: 13px 15px;
+      padding: 14px 15px;
     }
 
-    .testi-stars { font-size: 0.7rem; margin-bottom: 4px; }
+    .testi-top {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .testi-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #7c3aed, #ec4899);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .testi-meta { display: flex; flex-direction: column; }
+
+    .testi-name {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .testi-stars { font-size: 0.62rem; }
 
     .testi-text {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.68);
-      line-height: 1.5;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.58);
+      line-height: 1.55;
       font-style: italic;
     }
 
-    .testi-author {
-      font-size: 0.68rem;
+    .testi-verified {
+      font-size: 0.62rem;
       font-weight: 700;
-      color: rgba(255,255,255,0.3);
+      color: #4ade80;
       margin-top: 6px;
     }
 
@@ -210,12 +345,12 @@
       padding: 0 18px;
       display: flex;
       flex-direction: column;
-      gap: 7px;
+      gap: 6px;
     }
 
     .faq-item {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.07);
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
       border-radius: 12px;
       overflow: hidden;
     }
@@ -225,7 +360,7 @@
       background: none;
       border: none;
       color: #fff;
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       font-weight: 700;
       padding: 13px 15px;
       text-align: left;
@@ -238,8 +373,9 @@
 
     .faq-q::after {
       content: '+';
-      font-size: 1.1rem;
-      opacity: 0.4;
+      font-size: 1rem;
+      color: #a78bfa;
+      opacity: 0.6;
       transition: transform 0.2s;
       flex-shrink: 0;
     }
@@ -247,8 +383,8 @@
     .faq-item.open .faq-q::after { transform: rotate(45deg); }
 
     .faq-a {
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.55);
+      font-size: 0.76rem;
+      color: rgba(255,255,255,0.5);
       padding: 0 15px;
       max-height: 0;
       overflow: hidden;
@@ -261,10 +397,11 @@
       padding: 0 15px 13px;
     }
 
+    /* ── FOOTER ── */
     footer {
-      font-size: 0.62rem;
-      color: rgba(255,255,255,0.15);
-      margin-top: 28px;
+      font-size: 0.58rem;
+      color: rgba(255,255,255,0.12);
+      margin: 32px 0 20px;
       text-align: center;
     }
   </style>
@@ -272,29 +409,38 @@
 <body>
   <div class="page">
 
+    <!-- HERO -->
     <div class="hero">
-      <div class="tagline">Hacé que cada momento<br>sea inolvidable ✨</div>
-      <div class="sub">Plantillas personalizables en Canva.<br>Descargá, editá y sorprendé en minutos.</div>
-      <div class="trust">
-        <span class="trust-badge">✅ +4.000 personas confían</span>
-        <span class="trust-badge">⚡ Descarga inmediata</span>
-        <span class="trust-badge">🎨 Editá sin saber diseño</span>
-      </div>
+      <div class="hero-badge">Creadivia · Crea en Casa</div>
+      <div class="tagline">Hacé que cada momento<br>sea <span>inolvidable</span> ✨</div>
+      <div class="sub">Plantillas listas para personalizar en Canva. Descargá, editá y sorprendé en minutos.</div>
     </div>
 
-    <div class="urgency">🔥 Últimas unidades con precio de lanzamiento</div>
+    <!-- TRUST -->
+    <div class="trust">
+      <span class="trust-badge">✅ +4.000 clientes felices</span>
+      <span class="trust-badge">⚡ Descarga al instante</span>
+      <span class="trust-badge">🎨 Sin saber diseño</span>
+    </div>
 
+    <!-- URGENCY -->
+    <div class="urgency-wrap">
+      <div class="urgency">🔥 Precio de lanzamiento por tiempo limitado — después sube</div>
+      <div class="social-proof">🛒 <strong>23 personas</strong> compraron esto en las últimas 24hs</div>
+    </div>
+
+    <!-- PRODUCTS -->
     <div class="products">
 
       <a class="card"
          href="https://digital-s-9476.myshopify.com/products/kit-fiesta?"
          target="_blank" rel="noopener">
         <img class="card-img"
-             src="https://cdn.shopify.com/s/files/1/0986/7136/2411/files/image.png_202605280043_bbbda5f2-1511-4c33-a841-8bde36b36de9_430x.jpg?v=1779941655"
+             src="https://i.postimg.cc/r0QtnnNM/kit-fiesta.png"
              alt="Kit Fiesta" />
         <div class="card-overlay">
           <div class="card-info">
-            <span class="card-label">Nuevo</span>
+            <span class="card-label">🆕 Nuevo</span>
             <span class="card-title">Kit Fiesta Infantil 🎉</span>
           </div>
           <span class="card-btn">Lo quiero →</span>
@@ -348,23 +494,70 @@
 
     </div>
 
-    <div class="divider"></div>
-    <div class="section-title">⭐ Clientes felices</div>
-    <div class="testimonials">
-      <div class="testi">
-        <div class="testi-stars">⭐⭐⭐⭐⭐</div>
-        <div class="testi-text">"Llegó al instante y fue re fácil de editar. Quedó hermoso, mi familia no podía creer que lo hice yo."</div>
-        <div class="testi-author">— Valentina R.</div>
+    <!-- HOW IT WORKS -->
+    <div class="steps">
+      <div class="step">
+        <div class="step-icon">🛒</div>
+        <div class="step-num">1</div>
+        <div class="step-text">Elegí tu plantilla</div>
       </div>
-      <div class="testi">
-        <div class="testi-stars">⭐⭐⭐⭐⭐</div>
-        <div class="testi-text">"Armé todo el kit de la fiesta de mi hijo en 10 minutos. La mejor compra que hice."</div>
-        <div class="testi-author">— Camila M.</div>
+      <div class="step">
+        <div class="step-icon">📩</div>
+        <div class="step-num">2</div>
+        <div class="step-text">Recibila al instante</div>
+      </div>
+      <div class="step">
+        <div class="step-icon">✏️</div>
+        <div class="step-num">3</div>
+        <div class="step-text">Editá en Canva gratis</div>
       </div>
     </div>
 
+    <!-- GUARANTEE -->
+    <div class="guarantee">🛡️ Satisfacción garantizada — Si no te gusta, te devolvemos el dinero</div>
+
+    <!-- TESTIMONIALS -->
     <div class="divider"></div>
-    <div class="section-title">❓ Preguntas frecuentes</div>
+    <div class="section-title">Lo que dicen nuestros clientes</div>
+    <div class="testimonials">
+      <div class="testi">
+        <div class="testi-top">
+          <div class="testi-avatar">VR</div>
+          <div class="testi-meta">
+            <span class="testi-name">Valentina R.</span>
+            <span class="testi-stars">⭐⭐⭐⭐⭐</span>
+          </div>
+        </div>
+        <div class="testi-text">"Llegó al instante y fue re fácil de editar. Quedó hermoso, mi familia no podía creer que lo hice yo."</div>
+        <div class="testi-verified">✅ Compra verificada</div>
+      </div>
+      <div class="testi">
+        <div class="testi-top">
+          <div class="testi-avatar">CM</div>
+          <div class="testi-meta">
+            <span class="testi-name">Camila M.</span>
+            <span class="testi-stars">⭐⭐⭐⭐⭐</span>
+          </div>
+        </div>
+        <div class="testi-text">"Armé todo el kit de la fiesta de mi hijo en 10 minutos. La mejor compra que hice."</div>
+        <div class="testi-verified">✅ Compra verificada</div>
+      </div>
+      <div class="testi">
+        <div class="testi-top">
+          <div class="testi-avatar">LP</div>
+          <div class="testi-meta">
+            <span class="testi-name">Lucía P.</span>
+            <span class="testi-stars">⭐⭐⭐⭐⭐</span>
+          </div>
+        </div>
+        <div class="testi-text">"El álbum de parejas hizo llorar a mi novio. Nunca pensé que algo digital pudiera transmitir tanto."</div>
+        <div class="testi-verified">✅ Compra verificada</div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="divider"></div>
+    <div class="section-title">Preguntas frecuentes</div>
     <div class="faq">
       <div class="faq-item">
         <button class="faq-q">¿Cómo recibo mi compra?</button>
@@ -377,6 +570,10 @@
       <div class="faq-item">
         <button class="faq-q">¿Lo puedo imprimir?</button>
         <div class="faq-a">Sí, viene en alta calidad listo para imprimir en casa o en una imprenta.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">¿Tiene garantía?</button>
+        <div class="faq-a">Sí. Si no quedás conforme, te devolvemos el 100% de tu dinero. Sin preguntas.</div>
       </div>
     </div>
 
